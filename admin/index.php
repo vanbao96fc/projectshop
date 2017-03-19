@@ -10,12 +10,11 @@ if(isset($_POST['btnLogin']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link type="text/css" href="include/css.css" rel="stylesheet"></style>
+<link type="text/css" href="include/css.css" rel="stylesheet">
 <title>Admin Login</title>
 </head>
 
 <body>
-
 <section class="login">
     <div class="titulo">Admin Login</div>
     <form method="POST">
@@ -54,7 +53,5 @@ if(isset($_POST['btnLogin']))
 
                 }
                 ?>
-
-        </div>
 </body>
 </html>
