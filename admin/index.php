@@ -10,36 +10,28 @@ if(isset($_POST['btnLogin']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>login admin</title>
+<link type="text/css" href="include/css.css" rel="stylesheet">
+<title>Admin Login</title>
 </head>
 
 <body>
+<section class="login">
+    <div class="titulo">Admin Login</div>
+    <form method="POST">
+        <input type="text" name="user" id ="user" required title="Username required" placeholder="Username" data-icon="U" value="">
+        <input type="password" name="pass" id="pass" required title="Password required" placeholder="Password" data-icon="x" value="">
+        <div class="olvido">
+            <p id="notification"></p>
+        </div>
+        <input type="submit" class="enviar" name="btnLogin" value="Login"/>
 
-	<div id="formlogin">
-  
-    	<form method="POST">
-        	<p id="ThongBao"></p>
-        	<p>
-            	<label>Username:</label>
-                <input type="text" id="user" name="user" />
-        	</p>
-            <p>
-            	<label>Password:</label>
-                <input type="password" id="pass" name="pass" />
-        	</p>
-            <p>
-            	<input type="submit" name="btnLogin" value="Login" onclick="Kiemtra()" />
-            </p>
+    </form>    
+    </section>    	
             <?php
                 
                 if (isset($_POST['btnLogin'])){
                     $checkuser = $_POST['user'];
                     $checkpass =  $_POST['pass'];
-
-                    //Loại bỏ các ký tự \
-                    $checkuser = stripslashes($checkuser);
-                    $checkpass = stripslashes($checkpass);
-
 
                     $dbqlhs = mysqli_connect("localhost", "root", "", "iseshop");
 
@@ -48,17 +40,18 @@ if(isset($_POST['btnLogin']))
                     $row = mysqli_fetch_array($check);
                     if($row['Username'] == $checkuser && $row['Password'] == $checkpass)
                     {
-                        header('Location: http://localhost:1024/projectshop/admin/home-admin.php?UserID='.$row['UserID']);
+                        header('Location: home-admin.php?UserID='.$row['UserID']);
                     }
                     else
-                        echo "sai tên đăng nhập hoặc mật khẩu";
+                       {
+                        echo "<script type='text/javascript'>
+                                document.getElementById('notification').innerHTML = 'Username or password are incorrect';
+                                document.getElementById('user').value = '$checkuser';
+                                document.getElementById('pass').value = '$checkpass';
+                            </script>";
+                       }
 
                 }
                 ?>
-            <p>
-            	<a href="signup.php" id="dkuser">Tạo tài khoản.</a>
-            </p>
-            </form>
-        </div>
 </body>
 </html>
