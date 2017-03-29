@@ -1,11 +1,10 @@
 <?php
-ob_start();
-session_start();
-if(!isset($_SESSION["idUser"]) && $_SESSION["idGroup"] != 1){
-	header("location:../index.php");
-}
-require "../lib/dbCon.php";
-require "../lib/quantri.php";
+	ob_start();
+	session_start();
+	if(!isset($_SESSION['Username']))
+	{
+		header('Location: index.php');
+	}
 ?>
 <?php
 include "../lib/dbCon.php";

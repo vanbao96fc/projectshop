@@ -1,5 +1,4 @@
 <a href ="./">Trang chủ</a> 
-<a href ="./listTheLoai.php">Quản lí thể loại</a> 
-<a href ="./listLoaiTin.php">Quản lí loại tin</a> 
-<a href ="./listTin.php">Quản lí tin tức</a> 
-<a href ="./listQuangCao.php">Quảng cáo</a> 
+<a href ="./listproducts.php">Quản lý sản phẩm</a> 
+<a href ="./listbills.php">Quản lý hóa đơn</a> 
+<a href ="./user.php">Quản lý tài khoản</a> 
