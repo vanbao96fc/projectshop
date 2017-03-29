@@ -1,0 +1,20 @@
+#hangTieuDe {
+	background-color: #09F;
+	color: #FFF;
+	font-size:24px;
+	padding:10px;
+	text-align:center
+}
+#hang2 a{
+	width:20%;
+	padding:10px 0;
+	background-color:#00C;
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	float:left;
+	text-align:center;
+	}
+#hang2 a:hover{
+	background-color:#F00;
+	}
